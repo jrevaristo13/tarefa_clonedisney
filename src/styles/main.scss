@@ -1,0 +1,96 @@
+@use 'variaveis';
+@use 'hero';
+@use 'personagens';
+@use 'shows';
+@use 'footer';
+@use 'faqAccordion'; // Adicionado: para o acordeão, caso você o tenha em outro arquivo
+
+@font-face {
+    font-family: Avenir;
+    src: url(../../assent/fonts/Avenir-Regular.woff2);
+    font-weight: 400; 
+}
+
+@font-face {
+    font-family: Avenir;
+    src: url(../../assets/fonts/Avenir-Bold.woff2);
+    font-weight: 700;
+}
+
+body {
+    background-color: variaveis.$bg-primary;
+    font-family: Avenir, sans-serif;
+    padding-top: 85px; 
+    box-sizing: border-box;
+    overflow-x: hidden; // Impede a rolagem horizontal
+}
+
+@mixin text($fontSizer: 16px) {
+    font-size: $fontSizer;
+    line-height: $fontSizer + 10px;
+    color: variaveis.$text-color;
+}
+
+.text--big {
+    @include text(18px);
+}
+
+.text {
+    @include text(16px);
+}
+
+.text--small {
+    @include text(12px);
+}
+
+@mixin title($fontSizer: 40px) {
+    @include text($fontSizer);
+    color: variaveis.$text-color;
+}
+
+.title--big {
+    @include title(44px);
+}
+
+.title {
+    @include title;
+}
+
+.title--small {
+    @include title(28px);
+}
+
+.link--text {
+    @include text(18px);
+    color: variaveis.$text-color;
+    text-decoration: underline;
+}
+
+.img {
+    transform: translateY(-15px);
+}
+
+html, body {
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+:root {
+    scroll-padding-top: 75px;
+}
+
+section {
+    height: auto;
+    min-height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer {
+    height: auto;
+    min-height: auto;
+    scroll-snap-align: none;
+}

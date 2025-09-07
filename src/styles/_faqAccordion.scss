@@ -1,0 +1,37 @@
+    
+   @use 'variaveis'; // Adicionado: importa o arquivo de variáveis
+.filmes{    background-color: variaveis.$bg-primary;}
+.faqAccordion {
+    background-color: variaveis.$background-color; // Corrigido
+    color: variaveis.$text-color; // Exemplo de uso de outra variável
+    padding: 50px 0;
+
+    &__item {
+        margin-bottom: 20px;
+    }
+
+    &__header {
+        background-color: variaveis.$button-background; // Exemplo de uso
+        color: variaveis.$button-text-color; // Exemplo de uso
+        border-radius: variaveis.$border-radius; // Exemplo de uso
+        padding: 15px 20px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: variaveis.$button-hover-background;
+        }
+    }
+
+    &__content {
+        padding: 20px;
+        background-color: variaveis.$card-background; // Exemplo de uso
+        border-bottom-left-radius: variaveis.$border-radius;
+        border-bottom-right-radius: variaveis.$border-radius;
+        // Ocultar e mostrar o conteúdo com JavaScript
+        display: none; 
+    }
+}

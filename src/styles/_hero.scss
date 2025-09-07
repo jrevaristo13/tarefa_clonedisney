@@ -1,0 +1,35 @@
+@use'variaveis';
+
+.hero {
+    display: flex;
+    align-items: flex-start;
+    padding: 2vw 5.6vw;
+    margin-top: -85px;
+    background-image: url(../../src/images/hero.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh; // Mantenha isso para garantir que a seção cubra a tela
+    
+    &__content {
+        text-align: left;
+        
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 4rem;
+            text-shadow: 2px 2px 8px #000;
+            color: variaveis.$text-color;
+        }
+    
+        h2 {
+            color: variaveis.$text-color;
+        }
+    }
+}
+
+
+    
+
+
+
+

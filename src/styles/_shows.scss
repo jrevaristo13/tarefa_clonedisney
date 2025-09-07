@@ -42,7 +42,7 @@
         overflow: hidden;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
-        height: 110%;
+        height: 98%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -57,7 +57,7 @@
         }
 
         &-image {
-            width: 100%;
+            width: 90%;
             
             object-fit: contain; // Corrigido: para não cortar a imagem
             border-bottom-left-radius: 0;

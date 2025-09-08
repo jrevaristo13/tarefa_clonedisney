@@ -28,6 +28,11 @@ function images() {
     .pipe(dest('dist/images'));
 }
 
+function copyHtml() {
+  return src('index.html') // Pega o index.html da raiz
+    .pipe(dest('dist')); // Copia para a pasta dist
+}
+
 // Tarefa para monitorar alterações nos arquivos
 function watchFiles() {
   watch('src/styles/**/*.scss', styles);
@@ -36,7 +41,7 @@ function watchFiles() {
 }
 
 // Tarefa para construir os arquivos de produção (roda apenas uma vez)
-const build = parallel(styles, images, scripts);
+const build = parallel(styles, images, scripts, copyHtml); // Adicione copyHtml aqui
 
 // Exportar tarefas individuais
 exports.styles = styles;
